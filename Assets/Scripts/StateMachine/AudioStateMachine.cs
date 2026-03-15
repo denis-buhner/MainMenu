@@ -3,56 +3,44 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[RequireComponent(typeof(ButtonSpriteChanger), typeof(InputData))]
 public class AudioStateMachine : MonoBehaviour
 {
-    [Header("Components")]
-    [SerializeField] private InputData _inputData;
-    [SerializeField] private ButtonSpriteChanger _buttonSpriteChanger;
-
-    private Dictionary<Type, BaseAudioState> _states;
-    private BaseAudioState _currentState;
+    private InputData _inputData;
+    private ButtonSpriteChanger _buttonSpriteChanger;
+    private AudioSourceHandler _audioSourceHandler;
 
     private PlayState _playState;
     private PauseState _pauseState;
     private IdleState _idleState;
+    private MuteState _muteState;
 
-    private float _previousVolume;
+    private Dictionary<Type, BaseAudioState> _states;
+    private BaseAudioState _currentState;
 
-    private void Awake()
+    public void Initialize(InputData inputData, ButtonSpriteChanger buttonSpriteChanger, AudioSourceHandler audioSourceHandler)
     {
+        _inputData = inputData;
+        _buttonSpriteChanger = buttonSpriteChanger;
+        _audioSourceHandler = audioSourceHandler;
+
         _playState = gameObject.AddComponent<PlayState>();
         _pauseState = gameObject.AddComponent<PauseState>();
         _idleState = gameObject.AddComponent<IdleState>();
+        _muteState = gameObject.AddComponent<MuteState>();
 
         _states = GetComponents<BaseAudioState>().ToDictionary(state => state.GetType());
 
         foreach (var state in _states.Values)
         {
-            state.Initialize(this, _inputData, _buttonSpriteChanger);
+            state.Initialize(this, _inputData, _buttonSpriteChanger, _audioSourceHandler);
         }
-    }
 
-    private void Start()
-    {
         ChangeState<IdleState>();
     }
 
-    private void OnEnable()
+    public  void HandleButtonClick()
     {
-        _inputData.CustomButton.OnToggleChanged += HandleButtonToggle;
-        _inputData.CustomSlider.Slider.onValueChanged.AddListener(HandleSliderToggle);
-    }
-
-    private void OnDisable()
-    {
-        _inputData.CustomButton.OnToggleChanged -= HandleButtonToggle;
-        _inputData.CustomSlider.Slider.onValueChanged.RemoveListener(HandleSliderToggle);
-    }
-
-    private void HandleButtonToggle()
-    {
-        if (_currentState is PauseState || _currentState is IdleState)
+        if (_currentState is PlayState == false)
         {
             ChangeState<PlayState>();
         }
@@ -62,15 +50,17 @@ public class AudioStateMachine : MonoBehaviour
         }
     }
 
-    private void HandleSliderToggle(float value)
+    public void HandleVolumeChange(float value)
     {
-        if (value > 0 && ( _currentState is PauseState || _currentState is IdleState))
+        _audioSourceHandler.SetVolume(value);
+
+        if (value > 0 && ( _currentState is MuteState))
         {
-            ChangeState<PlayState>();
+            ChangeState<IdleState>();
         }
-        else if (value <= 0 && _currentState is PlayState)
+        else if (value <= 0 && !(_currentState is MuteState))
         {
-            ChangeState<PauseState>();
+            ChangeState<MuteState>();
         }
     }
 

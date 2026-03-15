@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61f39f918273d94dba136e74b6955ac, type: 3}
   m_Name: playConfig
   m_EditorClassIdentifier: Assembly-CSharp::ButtonVisualConfig
-  _normal: {fileID: -510790319, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
-  _highlighted: {fileID: 1196733870, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
-  _pressed: {fileID: 683180502, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
-  _selected: {fileID: 683180502, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
-  _disabled: {fileID: -949483199, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
+  _normal: {fileID: -286571962, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
+  _highlighted: {fileID: -987636657, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
+  _pressed: {fileID: 605836705, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
+  _selected: {fileID: 605836705, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
+  _disabled: {fileID: -286971722, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}

@@ -3,5 +3,6 @@
     public override void Enter()
     {
         ButtonSpriteChanger.SetIdleStyle();
+        AudioSourceHandler.Mute();
     }
 }

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b61f39f918273d94dba136e74b6955ac, type: 3}
-  m_Name: pauseConfig
+  m_Name: muteConfig
   m_EditorClassIdentifier: Assembly-CSharp::ButtonVisualConfig
-  _normal: {fileID: -987636657, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
+  _normal: {fileID: 1868957466, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
   _highlighted: {fileID: -286571962, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
   _pressed: {fileID: 1085319363, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
   _selected: {fileID: 1085319363, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}

@@ -109,6 +109,8 @@ AudioMixerController:
     name: Sound2
   - guid: 3c3a947a1bdeaca4ea9ee2c39d9fccf5
     name: Sound3
+  - guid: b230d88dcc4402449a11b851593a74b8
+    name: buttons
   m_AudioMixerGroupViews:
   - guids:
     - a9fea366e42b1c541a0b0cfb2ed9d7e5

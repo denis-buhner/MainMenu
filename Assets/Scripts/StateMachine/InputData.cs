@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 [RequireComponent(typeof(CustomButton), typeof(CustomSlider))]
 public class InputData : MonoBehaviour
