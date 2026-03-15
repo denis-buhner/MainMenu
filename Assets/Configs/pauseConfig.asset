@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61f39f918273d94dba136e74b6955ac, type: 3}
+  m_Name: pauseConfig
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonVisualConfig
+  _normal: {fileID: -949483199, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
+  _highlighted: {fileID: 1820986923, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
+  _pressed: {fileID: -1719451178, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
+  _selected: {fileID: -1719451178, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
+  _disabled: {fileID: -510790319, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}

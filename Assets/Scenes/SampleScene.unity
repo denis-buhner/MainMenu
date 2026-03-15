@@ -722,8 +722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameAudio
   _currentSource: {fileID: 175311494}
-  _currentMixer: {fileID: 24100000, guid: 22e98bf29af9c17428af1e23637ee790, type: 2}
-  _currentGroupName: Sound3
+  _isPlay: 0
 --- !u!1 &208645982
 GameObject:
   m_ObjectHideFlags: 0
@@ -2263,8 +2262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameAudio
   _currentSource: {fileID: 810868785}
-  _currentMixer: {fileID: 24100000, guid: 22e98bf29af9c17428af1e23637ee790, type: 2}
-  _currentGroupName: Sound1
+  _isPlay: 0
 --- !u!1 &814755493
 GameObject:
   m_ObjectHideFlags: 0
@@ -2296,8 +2294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameAudio
   _currentSource: {fileID: 814755495}
-  _currentMixer: {fileID: 24100000, guid: 22e98bf29af9c17428af1e23637ee790, type: 2}
-  _currentGroupName: Master
+  _isPlay: 0
 --- !u!82 &814755495
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2606,8 +2603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameAudio
   _currentSource: {fileID: 946589512}
-  _currentMixer: {fileID: 24100000, guid: 22e98bf29af9c17428af1e23637ee790, type: 2}
-  _currentGroupName: Sound2
+  _isPlay: 0
 --- !u!1 &947373655
 GameObject:
   m_ObjectHideFlags: 0
@@ -2888,8 +2884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameAudio
   _currentSource: {fileID: 992803115}
-  _currentMixer: {fileID: 24100000, guid: 22e98bf29af9c17428af1e23637ee790, type: 2}
-  _currentGroupName: Master
+  _isPlay: 0
 --- !u!1 &1033246605
 GameObject:
   m_ObjectHideFlags: 0

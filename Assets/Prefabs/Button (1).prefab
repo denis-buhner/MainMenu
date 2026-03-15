@@ -12,8 +12,11 @@ GameObject:
   - component: {fileID: 4815899862830618281}
   - component: {fileID: 8852664100823414559}
   - component: {fileID: 5462494824312177559}
-  - component: {fileID: 5415198557284087377}
-  - component: {fileID: 2675416675328677698}
+  - component: {fileID: 5587433258478590953}
+  - component: {fileID: 5289582324860458373}
+  - component: {fileID: 4794916466845246004}
+  - component: {fileID: 6473269581207849125}
+  - component: {fileID: 3065054495497470529}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -68,7 +71,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2035439352, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -91,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -107,10 +110,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: -510790319, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
-    m_PressedSprite: {fileID: -1719451178, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
-    m_SelectedSprite: {fileID: -1719451178, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
-    m_DisabledSprite: {fileID: -510790319, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -122,7 +125,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2675416675328677698}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CustomButton, Assembly-CSharp
         m_MethodName: ChangeButtonState
         m_Mode: 1
@@ -134,7 +137,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5415198557284087377
+--- !u!114 &5587433258478590953
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,23 +146,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5549161268887013387}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4cb24a4ff14db04584e0130369628dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 40a446ae383c50e4a9c1e28327977d07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonSpriteChanger
+  _idle: {fileID: 11400000, guid: e21b99c2e7512d344a8f5a491adba4eb, type: 2}
+  _playConfig: {fileID: 11400000, guid: 562848797a36a2e49b00a40e6388cc6b, type: 2}
+  _pauseConfig: {fileID: 11400000, guid: 64b50af015145484fb275b554915c7af, type: 2}
   _button: {fileID: 5462494824312177559}
-  _normalImageEnable: {fileID: -510790319, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
-  _highlightedSpriteEnable: {fileID: 1196733870, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
-  _pressedSpriteEnable: {fileID: 683180502, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
-  _selectedSpriteEnable: {fileID: 683180502, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
-  _disabledSpriteEnable: {fileID: -949483199, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
-  _normalImageDisable: {fileID: -949483199, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
-  _highlightedSpriteDisable: {fileID: 1820986923, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
-  _pressedSpriteDisable: {fileID: -1719451178, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
-  _selectedSpriteDisable: {fileID: -1719451178, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
-  _disabledSpriteDisable: {fileID: -510790319, guid: a11ea103d81f8dd4b896a5dcd08d3fcc, type: 3}
-  _buttonChangers:
-  - {fileID: 2675416675328677698}
---- !u!114 &2675416675328677698
+--- !u!114 &5289582324860458373
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,6 +162,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 5549161268887013387}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c09f82673077b9a4183ba3ef03b4d755, type: 3}
+  m_Script: {fileID: 11500000, guid: 4db3db5d3ccf15446972163e4bfa4457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioSourceData
+  _customSlider: {fileID: 3065054495497470529}
+  _customButton: {fileID: 6473269581207849125}
+--- !u!114 &4794916466845246004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5549161268887013387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d10c70928886f4f9c7371d30e9e674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioStateMachine
+  _inputData: {fileID: 5289582324860458373}
+  _buttonSpriteChanger: {fileID: 5587433258478590953}
+--- !u!114 &6473269581207849125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5549161268887013387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 300b261732ffcda42b483eda4ac3461f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustomButton
+--- !u!114 &3065054495497470529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5549161268887013387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90abf9b4ec8199f40955be4131cb7be9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CustomSlider
+  _slider: {fileID: 0}
