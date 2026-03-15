@@ -12,7 +12,8 @@ public class AudioFacade : MonoBehaviour
 
     private void Start()
     {
-        _audioStateMachine.Initialize(_inputData, _buttonSpriteChanger, _audioSourceHandler);
+        if(_audioStateMachine != null)
+            _audioStateMachine.Initialize(_inputData, _buttonSpriteChanger, _audioSourceHandler);
     }
 
     private void OnEnable()
