@@ -2291,6 +2291,8 @@ GameObject:
   - component: {fileID: 814755499}
   - component: {fileID: 814755498}
   - component: {fileID: 814755497}
+  - component: {fileID: 814755505}
+  - component: {fileID: 814755504}
   m_Layer: 0
   m_Name: MasterVolume
   m_TagString: Untagged
@@ -2422,10 +2424,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8168e693e22e4b543b092ac7f4df663f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioFacade
-  _inputData: {fileID: 814755500}
-  _buttonSpriteChanger: {fileID: 0}
-  _audioSourceHandler: {fileID: 814755499}
-  _audioStateMachine: {fileID: 0}
+  _volumeHandler: {fileID: 0}
+  _buttonStateMachine: {fileID: 0}
 --- !u!114 &814755498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2438,6 +2438,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9d10c70928886f4f9c7371d30e9e674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioStateMachine
+  _buttonSpriteChanger: {fileID: 0}
+  _customButton: {fileID: 0}
+  _playState: {fileID: 0}
+  _pauseState: {fileID: 0}
+  _idleState: {fileID: 0}
+  _muteState: {fileID: 0}
+  _currentState: {fileID: 0}
 --- !u!114 &814755499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2509,6 +2516,34 @@ MonoBehaviour:
   _pauseConfig: {fileID: 0}
   _muteConfig: {fileID: 0}
   _button: {fileID: 0}
+--- !u!114 &814755504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814755493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fa7d7f6c6efa824a8382a7378748a71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VolumeHandler
+  _audioSourceHandler: {fileID: 0}
+  _customSlider: {fileID: 0}
+--- !u!114 &814755505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814755493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5bc5e3a6ad063f4aa1021e599460b84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonStateMachine
+  _buttonSpriteChanger: {fileID: 0}
+  _customButton: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2838,10 +2873,6 @@ GameObject:
   m_Component:
   - component: {fileID: 992803114}
   - component: {fileID: 992803115}
-  - component: {fileID: 992803122}
-  - component: {fileID: 992803121}
-  - component: {fileID: 992803120}
-  - component: {fileID: 992803119}
   - component: {fileID: 992803118}
   - component: {fileID: 992803117}
   - component: {fileID: 992803116}
@@ -2973,13 +3004,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 992803113}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8168e693e22e4b543b092ac7f4df663f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5fa7d7f6c6efa824a8382a7378748a71, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioFacade
-  _inputData: {fileID: 992803119}
-  _buttonSpriteChanger: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::VolumeHandler
   _audioSourceHandler: {fileID: 992803118}
-  _audioStateMachine: {fileID: 0}
+  _customSlider: {fileID: 992803117}
 --- !u!114 &992803117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2989,9 +3018,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 992803113}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9d10c70928886f4f9c7371d30e9e674, type: 3}
+  m_Script: {fileID: 11500000, guid: 90abf9b4ec8199f40955be4131cb7be9, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioStateMachine
+  m_EditorClassIdentifier: Assembly-CSharp::CustomSlider
+  _slider: {fileID: 2057457155}
 --- !u!114 &992803118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3007,62 +3037,6 @@ MonoBehaviour:
   _audioSource: {fileID: 992803115}
   _audioMixer: {fileID: 24100000, guid: 22e98bf29af9c17428af1e23637ee790, type: 2}
   _groupName: MenuSound
---- !u!114 &992803119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992803113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4db3db5d3ccf15446972163e4bfa4457, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InputData
-  _customSlider: {fileID: 992803120}
-  _customButton: {fileID: 0}
---- !u!114 &992803120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992803113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90abf9b4ec8199f40955be4131cb7be9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CustomSlider
-  _slider: {fileID: 2057457155}
---- !u!114 &992803121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992803113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 300b261732ffcda42b483eda4ac3461f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CustomButton
---- !u!114 &992803122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992803113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40a446ae383c50e4a9c1e28327977d07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ButtonSpriteChanger
-  _idle: {fileID: 0}
-  _playConfig: {fileID: 0}
-  _pauseConfig: {fileID: 0}
-  _muteConfig: {fileID: 0}
-  _button: {fileID: 0}
 --- !u!1 &1033246605
 GameObject:
   m_ObjectHideFlags: 0

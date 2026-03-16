@@ -1,8 +1,7 @@
-﻿internal class IdleState : BaseAudioState
+﻿internal class IdleState : BaseButtonState
 {
     public override void Enter()
     {
         ButtonSpriteChanger.SetIdleStyle();
-        AudioSourceHandler.Mute();
     }
 }

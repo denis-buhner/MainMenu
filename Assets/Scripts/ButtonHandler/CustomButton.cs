@@ -4,6 +4,8 @@ using UnityEngine.EventSystems;
 
 public class CustomButton : MonoBehaviour, IPointerDownHandler
 {
+    public object CustomSlider { get; internal set; }
+
     public event Action OnToggleChanged;
 
     public void OnPointerDown(PointerEventData eventData)
